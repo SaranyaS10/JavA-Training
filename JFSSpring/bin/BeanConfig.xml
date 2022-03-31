@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+     
+    <!--  default-init-method="initfirst"
+        default-destroy-method="destroylast"-->
+    <!-- bean definitions here -->
+   <!--bean id="bookstore" class="MySpring.BookStore" > </bean>
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"></bean>
+    <bean id="bookPublisher" class="MySpring.BookPublisher"></bean>
+    <bean class="MySpring.BeanPostProcessClass"></bean>
+    <bean class="MySpring.BeanPostProcessSecondClass"></bean-->
+    
+    <bean id="books" class="MySpring.Books" scope="singleton"  > 
+    <property name="bookID" value="J001"></property>
+    <property name="bookname" value="The Java Programming Languauge "></property>
+    <property name="rate" value="600"></property>
+    <property name="authorname" value="James Gosling"></property>
+    <property name="Version" value=" 2.0"></property></bean>
+ 
+ <!--bean id="bookdetails" class="MySpring.BookDetails" >
+  <property name="books" ref="books"></property>
+  <property name="count" value="100"></property></bean-->
+   
+ 
+  <bean id="bookdetails" class="MySpring.BookDetails" >
+  <constructor-arg ref="books"/></bean>
+  
+  <!--
+  <bean id="product" class="Model.Product" >
+   <property name="item_ID" value="1001"></property>
+    <property name="item_Name" value="Mobile Phone "></property>
+    <property name="product_price" value="60000"></property>
+    <property name="quantity" value="100"></property></bean>
+   -->
+    <bean id="bookCollection" class="MySpring.BookCollection" >
+    <property name="booklist">
+    <list>
+    <value>The Java Programming Language</value>
+    <value>DOT NET</value>
+    <value>Python</value>
+    <value>C++</value>
+    </list>
+    </property>
+    </bean>
+   
+</beans>

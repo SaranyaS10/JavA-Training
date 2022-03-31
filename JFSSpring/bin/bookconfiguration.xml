@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <!-- bean definitions here   -->
+        <bean id="bookStore1" class="Spring1.BookStore1">
+     <property name="bookID" value="1000"></property>
+        <property name="bookName" value="The Java"></property>
+      </bean>
+          <bean id="bookStore2" class="Spring1.BookStore2">
+           <!--  
+        <property name="bookid" value="#{bookStore1.bookID*2}"></property>-->
+      
+        <property name="bookid" value="#{T(java.lang.Math).cbrt(-729)}"></property>
+           <!--  <property name="bookname" value="#{Java.toLowerCase()}"></property>-->
+        <property name="authorname" value="James Gosling"></property>
+        <property name="bookcount" value="#{T(java.lang.Math).pow(4,2)}"></property>
+         </bean>
+        </beans>
